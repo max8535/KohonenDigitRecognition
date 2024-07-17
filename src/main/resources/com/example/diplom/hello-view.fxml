@@ -64,10 +64,5 @@
       <Button layoutX="309.0" layoutY="365.0" mnemonicParsing="false" onAction="#yes_step" text="Да" visible="false" />
       <Button layoutX="460.0" layoutY="365.0" mnemonicParsing="false" onAction="#no_step" text="Нет" visible="false" />
       <Label fx:id="accuracy_label" layoutX="396.0" layoutY="425.0" />
-      <Label layoutX="275.0" layoutY="357.0" text="Результат распознавания: цифра 0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
    </children>
 </Pane>
