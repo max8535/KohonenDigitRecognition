@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom.MainController">
+   <children>
+      <MenuBar layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="829.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Работа с сетью">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#Network_create" text="Создать сеть" />
+              <MenuItem fx:id="learning_button" disable="true" mnemonicParsing="false" onAction="#Learning_500" text="Обучение" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" onAction="#openEdit" text="Настройка параметров">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Настройка" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Загрузка тестового набора данных">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#test" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Нарисовать изображение">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openDrawingPanel" text="Нарисовать" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Сохранение и загрузка сети">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#Save_network" text="Сохранить сеть" />
+                <MenuItem mnemonicParsing="false" onAction="#Load_network" text="Загрузить сеть" />
+              </items>
+            </Menu>
+        </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+      <Rectangle fx:id="User_rect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="82.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <ImageView fx:id="loaded_image_view" fitHeight="200.0" fitWidth="200.0" layoutX="82.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Text layoutX="89.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Изображение для распознавания" />
+       <Text layoutX="537.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Распознаное изображение" textAlignment="CENTER" wrappingWidth="185.8125" />
+      <Rectangle fx:id="Identified_rect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="530.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <ImageView fx:id="Identified_image_view" fitHeight="200.0" fitWidth="200.0" layoutX="530.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Button layoutX="335.0" layoutY="71.0" mnemonicParsing="false" onAction="#ImageLoadClick" prefHeight="25.0" prefWidth="151.0" text="Загрузить изображение" />
+      <Button layoutX="335.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" text="Зашумить изображение" />
+      <Slider blockIncrement="0.05" layoutX="341.0" layoutY="164.0" majorTickUnit="0.1" max="1.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.2" />
+      <Text layoutX="337.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Коэффициент зашумления" textAlignment="CENTER" />
+      <Button layoutX="335.0" layoutY="246.0" mnemonicParsing="false" onAction="#WeightView" text="Распознать изображение" />
+      <Button layoutX="309.0" layoutY="365.0" mnemonicParsing="false" onAction="#yes_step" text="Да" visible="false" />
+      <Button layoutX="460.0" layoutY="365.0" mnemonicParsing="false" onAction="#no_step" text="Нет" visible="false" />
+      <Label fx:id="accuracy_label" layoutX="396.0" layoutY="425.0" />
+      <Label layoutX="275.0" layoutY="357.0" text="Результат распознавания: цифра 0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
